@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    /* Opções do Projeto */
+    "target": "es2020", // Define a versão do JavaScript para a qual o código será compilado
+    "module": "commonjs", // Define o sistema de módulos (padrão para Node.js)
+    "outDir": "./dist", // <-- A configuração crucial! Diz para colocar o resultado na pasta 'dist'
+    "rootDir": "./src", // Define a pasta onde está seu código TypeScript (.ts)
+
+    /* Checagens Rígidas */
+    "strict": true, // Habilita todas as checagens de tipo mais rigorosas
+    "esModuleInterop": true, // Melhora a compatibilidade entre diferentes tipos de módulos
+
+    /* Opções Adicionais */
+    "skipLibCheck": true, // Pula a verificação de tipos em arquivos de declaração (.d.ts)
+    "forceConsistentCasingInFileNames": true // Garante que o case dos nomes de arquivos seja consistente
+  },
+  "include": ["src/**/*"] // Diz ao compilador para incluir todos os arquivos dentro da pasta 'src'
+}
