@@ -11,6 +11,8 @@ RUN npm ci
 # Instala as dependências de produção e desenvolvimento
 RUN npm run build
 # Compila o código TypeScript para JavaScript 
+RUN npm install --save-dev prettier 
+# Instala o Prettier como dependência de desenvolvimento
 COPY . /app/
 # Copia todo o conteúdo do diretório atual para o diretório de trabalho no contêiner
 # Fim do estágio de desenvolvimento "base" ----------------------------------
@@ -31,4 +33,4 @@ COPY --from=base /app/dist ./dist
 EXPOSE 3000
 
 # Comando para iniciar a aplicação
-CMD [ "node", "dist/services/evolutionApi.ts" ]
+CMD [ "node", "dist/services/evolutionApi.js" ]
