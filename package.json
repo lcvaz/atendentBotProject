@@ -1,0 +1,61 @@
+{
+  "name": "atendentbotproject",
+  "version": "1.0.0",
+  "description": "Sistema automatizado de atendimento via bot com TypeScript e Node.js",
+  "main": "dist/index.js",
+  "type": "module",
+  "keywords": [
+    "chatbot",
+    "automation",
+    "typescript",
+    "nodejs",
+    "customer-service"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:clean": "npm run clean && npm run build",
+    "start": "node dist/services/evolutionApi.js",
+    "dev": "tsx watch src/index.ts",
+    "clean": "rimraf dist",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:check": "eslint . --max-warnings 0",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "test": "jest",
+    "prestart": "npm run build",
+    "prebuild": "npm run clean",
+    "validate": "npm run type-check && npm run lint:check && npm run format:check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/node": "^22.7.9",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
+    "@typescript-eslint/parser": "^8.39.1",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.2"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "directories": {
+    "lib": "dist",
+    "test": "tests"
+  }
+}
